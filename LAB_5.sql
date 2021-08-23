@@ -63,7 +63,6 @@ WHERE title = "Academy Dinosaur" AND store_id = 1 AND rental_date IS NULL;
 
 select concat(a.first_name, ' ', a.last_name), 
 concat(b.first_name, ' ', b.last_name)
--- a1.actor_id as actor_a, a2.actor_id as actor_b
 from 
 film_actor a1
 inner join film_actor a2 on 
@@ -83,7 +82,7 @@ inner join customer c1 on c1.customer_id = r1.customer_id
 inner join customer c2 on c2.customer_id = r2.customer_id
 where r1.customer_id != r2.customer_id
 group by first_customer, second_customer -- r1.customer_id, i1.film_id, r2.customer_id
-having count(r1.customer_id) > 2;
+having count(r1.customer_id) > 3;
 
 -- 9. For each film, list actor that has acted in more films.
 
